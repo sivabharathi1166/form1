@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+        background-image: url(https://cdn.wallpapersafari.com/47/94/h3dRq7.jpg);
+    }
+    h2{
+        color: aliceblue;
+    }
+    .first{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: aliceblue;
+    }
+    label{
+        margin-right: 100px;
+    }
+    
+    
+
+</style>
+<body>
+    <h2>Form validation</h2>
+
+    <div class="first">
+        <!-- <img src="https://cdn.wallpapersafari.com/47/94/h3dRq7.jpg" alt=""> -->
+        <label for="name">Name:
+            
+        </label>
+        <input type="text" placeholder="Enter your name" id="name" name="name">
+        <br><br>
+
+        <label for="city">City:
+            
+
+        </label>
+        <input type="text" placeholder="Enter your current city" id="city" name="city">
+        <br><br>
+        <form action="" id="form">
+            <input type="submit">
+            <input type="reset">
+        </form>
+
+
+
+    </div>
+
+    
+
+    <script>
+        let fo=document.getElementById("form")
+       
+
+        fo.addEventListener("submit",(e)=>{
+            e.preventDefault()
+
+            let name=document.getElementById("name").value 
+            let city=document.getElementById("city").value
+
+            if(name===""){
+                alert("Please enter your name")
+                return;
+            }
+
+            if(city===""){
+                alert("please Enter your city")
+                return;
+            }
+
+            localStorage.setItem("name", name);
+            localStorage.setItem("city", city);
+            
+
+            alert("Form Submitted Succcessfully!")
+        }
+
+        )
+
+        let resetButton=document.getElementById("form")
+        resetButton.addEventListener("reset", (e) => {
+            document.getElementById("name").value
+            document.getElementById("city").value
+
+            localStorage.removeItem("name");
+            localStorage.removeItem("city");
+
+            alert("Form reset and localStorage cleared!");
+        });
+
+    </script>
+</body>
+</html>
